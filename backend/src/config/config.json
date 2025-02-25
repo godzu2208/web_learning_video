@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "root",
+        "password": "Linh2051120137?",
+        "database": "web_learning_video",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "test": {
+        "username": "root",
+        "password": "Linh2051120137?",
+        "database": "web_learning_video_test",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "root",
+        "password": "Linh2051120137?",
+        "database": "web_learning_video_production",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    }
+}
