@@ -9,6 +9,7 @@ const userRoutes = require('./routes/userRoutes');
 const courseRoutes = require('./routes/courseRoutes');
 const lessonRoutes = require("./routes/lessonRoutes");
 const progressRoutes = require("./routes/progressRoutes");
+const testRoutes = require("./routes/testRoutes");
 
 
 
@@ -24,6 +25,8 @@ app.use('/api/users', userRoutes);
 app.use('/api/courses', courseRoutes);
 app.use("/api/lessons", lessonRoutes);
 app.use("/api/progress", progressRoutes);
+app.use("/api/tests", testRoutes);
+
 // Kết nối database
 sequelize.sync({ force: false }) // Để true nếu muốn reset database
     .then(() => console.log('Database connected successfully'))

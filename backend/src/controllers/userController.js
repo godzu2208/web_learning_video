@@ -12,14 +12,22 @@ exports.register = async (req, res) => {
         const { username, email, password, role } = req.body;
 
         // Kiểm tra email đã tồn tại chưa
-        const existingUser = await User.findOne({ where: { email } });
-        if (existingUser) return res.status(400).json({ message: "Email đã tồn tại!" });
+        const existingUser = await User.findOne({
+            where: { email }
+        });
+        if (existingUser)
+            return res.status(400).json({ message: "Email đã tồn tại!" });
 
         // Mã hóa mật khẩu
         const hashedPassword = await bcrypt.hash(password, 10);
 
         // Tạo user mới
-        const newUser = await User.create({ username, email, password: hashedPassword, role });
+        const newUser = await User.create({
+            username,
+            email,
+            password: hashedPassword,
+            role
+        });
 
         res.status(201).json({ message: "Đăng ký thành công!", user: newUser });
     } catch (error) {
