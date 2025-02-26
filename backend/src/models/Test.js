@@ -71,11 +71,6 @@ const sequelize = require('../config/database');
 //     }
 // });
 const Test = sequelize.define('Test', {
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
     title: {
         type: DataTypes.STRING,
         allowNull: false

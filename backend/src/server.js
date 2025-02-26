@@ -10,7 +10,7 @@ const courseRoutes = require('./routes/courseRoutes');
 const lessonRoutes = require("./routes/lessonRoutes");
 const progressRoutes = require("./routes/progressRoutes");
 const testRoutes = require("./routes/testRoutes");
-
+const questionRoutes = require("./routes/questionRoutes")
 
 
 dotenv.config();
@@ -26,6 +26,7 @@ app.use('/api/courses', courseRoutes);
 app.use("/api/lessons", lessonRoutes);
 app.use("/api/progress", progressRoutes);
 app.use("/api/tests", testRoutes);
+app.use('/api/questions', questionRoutes);
 
 // Kết nối database
 sequelize.sync({ force: false }) // Để true nếu muốn reset database

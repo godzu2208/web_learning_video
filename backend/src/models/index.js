@@ -12,4 +12,4 @@ sequelize.sync({ alter: true }) // Cập nhật bảng nếu có thay đổi
     .catch(err => console.error("Error syncing database:", err));
 Test.hasMany(Question, { foreignKey: 'test_id', onDelete: 'CASCADE' });
 Question.belongsTo(Test, { foreignKey: 'test_id' });
-module.exports = { User, Course, Lesson, Test, Progress };
+module.exports = { User, Course, Lesson, Test, Progress, Question };
