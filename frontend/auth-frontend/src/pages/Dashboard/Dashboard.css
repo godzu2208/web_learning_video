@@ -1,0 +1,155 @@
+/* App.css */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #163434;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+  }
+  
+  .login-btn {
+    background-color: red;
+    color: white;
+    border-radius: 48px;
+    text-decoration: none;
+    line-height: 1.33334;
+    text-align: center;
+    font-weight: 500;
+    margin: 0px 4px;
+    padding: 9px 16px;
+  }
+  
+  .banner {
+    /* text-align: center; */
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  .banner .text-title {
+    color: #36c;
+    padding-left: 48px;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+ .banner .text-name {
+    color: #e30613;
+    font-family: Montserrat, sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    max-width: 400px;
+    padding-left: 48px;
+}
+.search-area{
+      padding-left: 48px;
+      /* padding: 16px 16px 0px 0px; */
+} 
+.search-area form[role=search] {
+    background-color: #fff;
+    border: 1px solid #c1c1c1;
+    border-radius: 30px;
+    max-width: 430px;
+    padding: 5px;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+.search-area .pgn__searchfield_wrapper input {
+    border: 0 !important;
+    border-radius: 30px;
+    outline: none !important;
+}
+.search-area .pgn__searchfield.pgn__searchfield--external .btn-primary {
+    background: #d23228 !important;
+    border: 0 !important;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    white-space: nowrap;
+}
+.pgn__searchfield .pgn__searchfield-form {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    /* width: 100%; */
+} 
+.form-control {
+    /* width: 100%; */
+    width: 80%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    /* padding-top: 12px; */
+}
+
+
+/*  */
+  .video-section,
+  .course-section {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .video-card,
+  .course-card {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+
+
+  /*  */
+  footer {
+    text-align: center;
+    padding: 10px;
+    background: #0073e6;
+    color: white;
+  }
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #163434;
+    z-index: 1000;
+  }
+  
+  .fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #163434;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 60px; /* Để tránh che nội dung dưới header */
+    padding-bottom: 40px; /* Để tránh che nội dung trên footer */
+  }
+  
+  .content {
+    flex: 1;
+    overflow-y: auto;
+    /* padding: 20px; */
+  }
