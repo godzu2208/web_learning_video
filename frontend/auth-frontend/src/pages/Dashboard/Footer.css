@@ -1,0 +1,27 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #163434;
+    color: #fff;
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
