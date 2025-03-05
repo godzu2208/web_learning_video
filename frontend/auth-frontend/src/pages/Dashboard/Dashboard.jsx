@@ -1,14 +1,7 @@
 import React from "react";
 import Header from './Header.jsx';
 import Footer from "./Footer.jsx";
-const Banner = () => {
-  return (
-    <div className="banner">
-      <h1>Banner</h1>
-
-    </div>
-  );
-};
+import Banner from "./Banner.jsx";
 
 const VideoGuide = () => {
   const videos = [
@@ -40,15 +33,20 @@ const CourseList = () => {
 
 const Dashboard = () => {
   return (
-    <div className="dashboard-container">
-      <Header />
-      <div className="content">
-        <Banner />
-        <VideoGuide />
-        <CourseList />
-      </div>
+    <div id="root">
+      <main>
+        <div className="dashboard-container">
+          <Header />
+          <div className="content">
+            <Banner />
+            <VideoGuide />
+            <CourseList />
+          </div>
+        </div>
+      </main>
       <Footer />
     </div>
+
   );
 };
 

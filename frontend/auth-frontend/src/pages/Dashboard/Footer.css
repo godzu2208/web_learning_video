@@ -1,27 +1,109 @@
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
 
-div {
-    display: block;
-    unicode-bidi: isolate;
-}
 
 /* FOOTER */
 footer {
-    text-align: center;
     padding: 10px;
-    background-color: #163434;
-    color: #fff;
+    background-color: #fff;
+    color: #191D28;
+    /*  */
+    border-top: solid 1px #DEE5EF;
+    background: #FFFFFF !important;
+    box-shadow: inset 0 1px 0 0 #E5E5E5;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    padding-bottom: 12px;
+}
+
+.footer-content {
+    max-width: 1300px;
+    padding: 60px 0px !important;
+    margin: 0 auto;
+    z-index: 999;
+
+}
+
+.footer-content .content-row {
+    position: relative;
+    height: auto;
+    margin-right: 0;
+    margin-left: 0;
+    zoom: 1;
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* justify-content: space-between; */
+}
+
+.content-row .footer-col {
+    width: 25%;
+}
+
+.footer-col h4 {
+    color: #191D28;
+    /* font-family: 'Poppins Bold'; */
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 21px;
+    text-transform: uppercase;
+    padding: 0px 16px;
+    margin: 12px 0px;
+}
+
+.footer-col .col-contact {
+    margin: 16px 0px;
+}
+
+.col-contact .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    border-style: none;
+    flex-direction: column;
+}
+
+.contact-info li {
+    list-style: none;
+    margin: 4px 0px;
+    display: flex;
+    width: 80% !important;
+    height: 40px;
+    /* width: 50% !important; */
+    padding: 0px 16px;
+}
+
+
+.contact-info li a {
+    display: flex;
+    align-items: center;
+    font-weight: 500 !important;
+    cursor: pointer;
+    text-decoration: none;
+    color: #647091;
+    width: 100%;
+    padding: 4px 0px;
+}
+
+.contact-info li a:hover {
+    color: #191D28;
+}
+
+/*  */
+.footer-bottom {
+    border-top: solid 1px #DEE5EF;
+    color: #67758D;
+    font-size: 14px;
+    padding-bottom: 24px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .fixed-footer {
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     width: 100%;
-    text-align: center;
     padding: 10px;
 }

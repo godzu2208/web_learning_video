@@ -1,5 +1,6 @@
 import React from "react";
 import "./Dashboard.css";
+import "./Header.css";
 import logo from './logo.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,12 +9,13 @@ const Header = () => {
     return (
         <header className="layout-header">
             <div className="layout-header_content">
+                {/* logo */}
                 <div className="logo-header_">
                     <a className="logo-header" href="/">
                         <img src={logo} alt="Hexagon Elearning" className="logo" />
                     </a>
                 </div>
-                {/*  */}
+                {/* features */}
                 <div className="menu-header">
                     {/* Left */}
                     <div className="v-menu">

@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: border-box;
 }
 
 div {
@@ -10,146 +11,24 @@ div {
   unicode-bidi: isolate;
 }
 
-.layout-header {
-  /* background:#fff; */
-  padding: 0px 16px;
-}
-
-.layout-header .layout-header_content {
-  /* background: #ccc; */
-  display: flex;
-
-}
-
-.layout-header_content .logo-header {
+html,
+body {
   height: 100%;
-  /* display: -webkit-box; */
-  /* display: flex; */
-  -webkit-box-align: center;
-  align-items: center;
-
 }
 
-.layout-header_content .logo-header .logo {
-  height: 48px;
-  padding: 12px;
-  padding-left: 108px;
-}
-
-.menu-header {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center;
-  flex-direction: row;
-  width: 100% !important;
-}
-
-.v-menu ul {
-  background: #fff;
-  border-bottom: none;
-  height: 100%;
+body {
   display: flex;
-  -webkit-box-align: center !important;
-  align-items: center !important;
-  list-style-type: none;
+  flex-direction: column;
+  color: #363636;
 }
 
-.v-menu ul li {
-  padding: 0px 12px;
-  width: 68px;
-  align-items: center;
-  text-align: center;
-  margin: 0 10px;
-}
-
-.v-menu li a {
-  color: #191D28 !important;
-  font-size: 16px;
-  font-weight: 700;
-  /* font-family: 'Poppins Bold'; */
-  text-decoration: none;
-}
-
-/* V-Right */
-.v-right {
+#root {
   display: flex;
-  align-items: center;
-  flex-direction: row;
+  flex-direction: column;
+  min-height: 100vh;
+
 }
 
-.v-searchBox {
-  margin-right: 32px;
-  position: relative;
-  width: auto;
-}
-
-.v-searchBox input {
-  z-index: 2;
-  /* position: relative; */
-  height: 40px;
-  width: 260px;
-  border-radius: 25px;
-  background: #EAF0F7 !important;
-  border: none !important;
-  padding-left: 24px;
-  font-size: 14px;
-  margin: 8px;
-  /* position: relative; */
-}
-
-.v-searchBox .icon-search {
-  position: absolute;
-  top: 50%;
-  z-index: 2;
-  right: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: rgba(27, 27, 27, 0.65);
-  line-height: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.v-user .v-login {
-  color: #191D28;
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0px 12px;
-  text-decoration: none;
-}
-
-.v-login :hover {
-  color: #000;
-  text-decoration: underline;
-}
-
-.v-user .v-register {
-  background-color: #FAD20B;
-  height: 48px;
-  border-radius: 24px;
-  width: auto;
-  color: #191D28;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 6px 32px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: 21px;
-  margin: 0px 12px;
-}
-
-.v-user .v-register :hover {
-  color: #FFE772;
-  cursor: pointer;
-  color: #000;
-}
-
-
-.search-input:placeholder-shown {
-  text-overflow: ellipsis;
+main {
+  flex: 1;
 }
