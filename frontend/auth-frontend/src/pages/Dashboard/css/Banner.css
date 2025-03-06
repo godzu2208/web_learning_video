@@ -14,7 +14,7 @@
     -webkit-box-align: center !important;
     align-items: center !important;
     width: 100%;
-    background: url(./logo/bg-introduction-banner.png) no-repeat;
+    background: url(./bg-introduction-banner.png) no-repeat;
     background-size: cover;
     z-index: 1000;
 }

@@ -1,0 +1,127 @@
+.topic-container {
+    background: url(./logo/topic-recommend-bg.png) no-repeat 100% 0;
+    background-size: cover;
+    position: relative;
+    z-index: 10;
+}
+
+.topic-container .topic-c-left {
+    background: url(./logo/polygon-blue.png) no-repeat 100% 0;
+    background-size: contain;
+    position: absolute;
+    z-index: 200;
+    bottom: -85px;
+    left: -80px;
+    width: 200px;
+    height: 200px;
+
+}
+
+.topic-container .topic-c-right {
+    background: url(./logo/topic-recommend-rocket.png) no-repeat 100% 0;
+    background-size: contain;
+    position: absolute;
+    top: -85px;
+    right: 0;
+    width: 100%;
+    height: 418px;
+    z-index: -1;
+}
+
+
+.topic-container .topic-c-center {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 0px 100px 0px;
+    z-index: 2;
+    align-items: center;
+    display: flex;
+    -webkit-box-align: center !important;
+    flex-direction: column !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important
+}
+
+.topic-container .topic-c-center .heading-topic {
+    color: #FFFFFF;
+    /* font-family: 'Poppins ExtraBold'; */
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.topic-container .topic-c-center .description-heading {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 26px;
+    margin-top: 8px;
+}
+
+.topic-container .topic-c-center .list-topic {
+    margin-top: 48px;
+    width: 100%;
+}
+
+.list-topic .list-content {
+    display: flex;
+    flex-flow: row wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
+
+.list-topic .list-content .topic-item {
+    padding: 15px;
+    -webkit-box-flex: 0;
+    flex: 0 0 25%;
+    max-width: 100%;
+}
+
+.topic-item .item-content {
+    height: 108px;
+    background-color: #fff;
+    border: solid 1px #EAF0F7;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 5px 10px -10px rgba(0, 0, 0, 0.2);
+    -webkit-box-pack: justify !important;
+    justify-content: space-between !important;
+    -webkit-box-align: center !important;
+    align-items: center !important;
+    display: flex;
+}
+
+.item-content .ct-right-da img {
+    height: 512px;
+    width: 512px;
+}
+
+.ct-right img {
+    height: 52px;
+    width: 52px;
+}
+
+.item-content .name-item {
+    color: #191D28;
+    /* font-family: 'Poppins Bold'; */
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 30px;
+    cursor: pointer;
+
+}
+
+
+.ct-left .course-item {
+    color: #67758D;
+    /* font-family: 'Roboto Regular'; */
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    /* font-weight: 500; */
+    margin-top: 8px;
+}

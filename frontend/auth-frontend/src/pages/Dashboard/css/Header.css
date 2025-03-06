@@ -1,5 +1,9 @@
 .layout-header {
     padding: 4px 16px;
+    z-index: 1000;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
 }
 
 .layout-header .layout-header_content {
@@ -48,10 +52,12 @@
     text-align: center;
     margin: 0 10px;
 }
-.v-menu ul li:hover{
+
+.v-menu ul li:hover {
     cursor: pointer;
     text-decoration: underline;
 }
+
 .v-menu li a {
     color: #191D28 !important;
     font-size: 16px;

@@ -1,7 +1,7 @@
 import React from "react";
-import "./Dashboard.css";
-import "./Header.css";
-import logo from './logo.png';
+import "./css/Dashboard.css";
+import "./css/Header.css";
+import logo from './logo/logo.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
