@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import Footer from "./Footer.jsx";
 import Banner from "./Banner.jsx";
 import Topic from "./Topic.jsx";
-
+import Courses from "./Courses.jsx";
 
 
 const Dashboard = () => {
@@ -15,6 +15,7 @@ const Dashboard = () => {
           <div className="content">
             <Banner />
             <Topic />
+            <Courses />
           </div>
         </div>
       </main>
