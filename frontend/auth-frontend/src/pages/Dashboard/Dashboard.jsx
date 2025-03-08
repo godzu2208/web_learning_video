@@ -6,6 +6,7 @@ import Topic from "./Topic.jsx";
 import Courses from "./Courses.jsx";
 import Newest from "./Newest.jsx";
 import HIK from "./HIK.jsx";
+import Roadmaps from "./Roadmaps.jsx";
 const Dashboard = () => {
   return (
     <div id="root">
@@ -18,6 +19,7 @@ const Dashboard = () => {
             <Courses />
             <Newest />
             <HIK />
+            <Roadmaps />
           </div>
         </div>
       </main>

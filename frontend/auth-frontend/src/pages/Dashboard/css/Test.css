@@ -1,6 +1,8 @@
-.layout{
-    padding-bottom: 60px;
+.layout {
+    padding-bottom: 120px;
+    background-color: #f9f9f9;
 }
+
 .layout .heading {
     font-size: 30px;
     text-align: center;
@@ -12,13 +14,11 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 40px 0px;
+    padding: 60px 0px;
 
 }
 
-.newest-courses {
-    margin: 40px 0px;
-}
+/* .newest-courses {} */
 
 .layout .layout-container .content-newest-course {
     position: relative;
