@@ -10,9 +10,9 @@ const Newest = () => {
     const sliderRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
-    const itemsPerSlide = 3;
+    const itemsPerSlide = 4;
     const totalItems = 20;
-    const itemWidth = 300;
+    const itemWidth = 360; // 360px for each item + margin
     const animationDuration = 100; // 100ms for animation
 
     const smoothScroll = useCallback((targetIndex) => {

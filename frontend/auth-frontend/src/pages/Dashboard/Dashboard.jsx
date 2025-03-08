@@ -5,7 +5,7 @@ import Banner from "./Banner.jsx";
 import Topic from "./Topic.jsx";
 import Courses from "./Courses.jsx";
 import Newest from "./Newest.jsx";
-
+import HIK from "./HIK.jsx";
 const Dashboard = () => {
   return (
     <div id="root">
@@ -17,7 +17,7 @@ const Dashboard = () => {
             <Topic />
             <Courses />
             <Newest />
-
+            <HIK />
           </div>
         </div>
       </main>
