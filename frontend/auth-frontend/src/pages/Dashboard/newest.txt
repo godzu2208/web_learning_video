@@ -1,0 +1,68 @@
+import "./css/Newest.css";
+import arrL from "./logo/arrow-left.svg";
+import arrR from "./logo/arrow-right.svg";
+import logoAI from "./logo/logo-ai.svg";
+
+const Newest = () => {
+    return (
+        <>
+            <div className="newest-courses">
+                <div className="layout">
+                    <div className="heading">
+                        Newest Courses
+                    </div>
+                    <div className="layout-container">
+                        <div className="content-newest-course">
+                            <div className="arrow arrow-left ">
+                                <img src={arrL} alt="arrow-left" />
+                            </div>
+                            <div className="list-newest">
+                                <div className="list-slider">
+                                    <div className="list-sticky">
+                                        <div className="sticky-track">
+                                            {/* sticky slide */}
+                                            <div className="sticky-slide">
+                                                <div className="item-content">
+                                                    <div className="ct-left">
+                                                        <div className="name-item">
+                                                            AI Agent
+                                                        </div>
+                                                        <div className="state-item">
+                                                            <p className="course-item total">
+                                                                1 courses
+                                                            </p>
+                                                            <p className="course-item state">
+                                                                1 incomming courses
+                                                            </p>
+
+                                                        </div>
+                                                    </div>
+                                                    <div className="ct-right">
+                                                        <img src={logoAI} alt="1Office" className="logo-topic" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="sticky-slide"></div>
+                                            <div className="sticky-slide"></div>
+                                            <div className="sticky-slide"></div>
+                                            <div className="sticky-slide"></div>
+                                            <div className="sticky-slide"></div>
+                                            <div className="sticky-slide"></div>
+                                            <div className="sticky-slide"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="arrow arrow-right">
+                                <img src={arrR} alt="arrow-right" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </>
+    )
+}
+
+export default Newest;

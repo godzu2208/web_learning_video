@@ -4,7 +4,7 @@ import Footer from "./Footer.jsx";
 import Banner from "./Banner.jsx";
 import Topic from "./Topic.jsx";
 import Courses from "./Courses.jsx";
-
+import Newest from "./Newest.jsx";
 
 const Dashboard = () => {
   return (
@@ -16,6 +16,8 @@ const Dashboard = () => {
             <Banner />
             <Topic />
             <Courses />
+            <Newest />
+
           </div>
         </div>
       </main>

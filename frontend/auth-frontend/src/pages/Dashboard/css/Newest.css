@@ -1,0 +1,327 @@
+.newest-courses {
+    background-color: #F9F9F9;
+}
+
+
+.layout .layout-container .content-newest-course {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* flex-direction: row; */
+    flex-direction: column;
+}
+
+.content-newest-course .arrow {
+    border-radius: 50%;
+    position: absolute;
+    z-index: 999;
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 3px 6px 0 rgba(32, 27, 23, 0.17);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* top: 50%; */
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.content-newest-course .arrow-left {
+    left: 0px;
+    margin-right: 32px;
+}
+
+.content-newest-course .arrow-right {
+    right: 0px;
+    margin-left: 32px;
+}
+
+.arrow .arrow-icon {
+    width: 20px;
+    height: 40px;
+    /* background: #fff; */
+    border-radius: 50%;
+    max-width: 12px !important;
+    border: 1px solid #DEE5EF;
+}
+
+.list-newest {
+    max-width: calc(100vw - 30px);
+    min-width: calc(100vw - 30px);
+    width: 100%;
+    padding: 0;
+    color: rgba(27, 27, 27, 0.65);
+    font-size: 16px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    list-style: none;
+    -webkit-font-feature-settings: 'tnum';
+    font-feature-settings: 'tnum';
+    margin: 0px;
+}
+
+.list-newest .list-slider {
+    position: relative;
+    display: block;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+}
+
+.list-newest .list-slider .list-sticky {
+    /* -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; */
+}
+
+.list-sticky .sticky-track {
+    /* position: relative;
+    top: 0;
+    left: 0;
+    /* display: block; */
+    /* opacity: 1; */
+    /* transform: translate3d(2000px, 0px, 0px);
+    width: 10827px;
+    display: flex;
+    flex-flow: row wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    */
+
+}
+
+.list-sticky .sticky-track .sticky-slide {
+    padding: 15px;
+    -webkit-box-flex: 0;
+    flex: 0 0 25%;
+    max-width: 100%;
+    width: 410px;
+    /* display: none; */
+    /* background:#000; */
+}
+
+
+/* Copy topic */
+.topic-container .topic-c-center .list-topic {
+    margin-top: 48px;
+    width: 100%;
+}
+
+.list-topic .list-content {
+    display: flex;
+    flex-flow: row wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
+
+.list-topic .list-content .topic-item {
+    padding: 15px;
+    -webkit-box-flex: 0;
+    flex: 0 0 25%;
+    max-width: 100%;
+}
+
+.topic-item .item-content {
+    height: 108px;
+    background-color: #fff;
+    border: solid 1px #EAF0F7;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 5px 10px -10px rgba(0, 0, 0, 0.2);
+    -webkit-box-pack: justify !important;
+    justify-content: space-between !important;
+    -webkit-box-align: center !important;
+    align-items: center !important;
+    display: flex;
+}
+
+.item-content .ct-right-da img {
+    height: 512px;
+    width: 512px;
+}
+
+.ct-right img {
+    height: 52px;
+    width: 52px;
+}
+
+.item-content .name-item {
+    color: #191D28;
+    /* font-family: 'Poppins Bold'; */
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 30px;
+    cursor: pointer;
+
+}
+
+
+.ct-left .course-item {
+    color: #67758D;
+    /* font-family: 'Roboto Regular'; */
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    /* font-weight: 500; */
+    margin-top: 8px;
+}
+
+.newest-courses .layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 0px 100px 0px;
+    display: flex;
+    align-items: center;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+    flex-direction: column !important;
+}
+
+.layout .heading {
+    font-size: 30px;
+    text-align: center;
+    color: #191D28;
+    padding-left: 15px;
+    /* font-family: 'Poppins ExtraBold'; */
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    /* width: 100%; */
+}
+
+.layout .layout-container {
+    margin-top: 56px;
+}
+
+.content-newest-course {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: calc(100% - 80px);
+    /* Trừ đi 80px để bù cho padding 40px mỗi bên */
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0 40px;
+    /* Thêm padding 40px mỗi bên */
+}
+
+.arrow {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.list-newest {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+}
+
+.list-slider {
+    position: relative;
+    width: 100%;
+}
+
+.list-sticky {
+    overflow: hidden;
+    width: 100%;
+}
+
+.sticky-track {
+    display: flex;
+    width: max-content;
+    transition: transform 0.5s ease-in-out;
+}
+
+.sticky-column {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    /* Độ rộng của một cột */
+    margin: 0 10px;
+}
+
+.sticky-slide {
+    width: 100%;
+    height: 200px;
+    background: #f0f0f0;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+/* Code */
+.content-newest-course {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: calc(100% - 80px);
+    /* Trừ đi 80px để bù cho padding 40px mỗi bên */
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0 40px;
+    /* Thêm padding 40px mỗi bên */
+}
+
+.arrow {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.list-newest {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+}
+
+.list-slider {
+    position: relative;
+    width: 100%;
+}
+
+.list-sticky {
+    overflow: hidden;
+    width: 100%;
+}
+
+.sticky-track {
+    display: flex;
+    width: max-content;
+    transition: transform 0.5s ease-in-out;
+}
+
+.sticky-column {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    /* Độ rộng của một cột */
+    margin: 0 10px;
+}
+
+.sticky-slide {
+    width: 100%;
+    height: 200px;
+    background: #f0f0f0;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
