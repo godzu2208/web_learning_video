@@ -1,0 +1,118 @@
+.path-learning {
+    flex-shrink: 0 !important;
+}
+
+.path-learning .path-learning-content {
+    background: #FFFFFF;
+    height: 540px;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.path-learning .path-learning-content .logo {
+    height: 40px;
+    vertical-align: middle;
+    border-style: none;
+    max-width: 100%;
+    /* display: block; */
+}
+
+.path-learning .path-learning-content .text {
+    font-size: 40px;
+    margin-top: 50px;
+    color: #000000;
+    /* font-family: 'Poppins ExtraBold'; */
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.path-learning .path-learning-content .description {
+    /* margin-top: 50px;
+    color: #000000;
+    font-family: 'Poppins ExtraBold';
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 60px;
+    text-align: center; */
+    margin: 15px 0px 40px 0px;
+    color: #67758D;
+    /* font-family: Roboto; */
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 26px;
+    text-align: center;
+}
+
+
+.path-learning .path-learning-content .link-roadmap {
+    color: #3273dc;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+    -webkit-text-decoration-skip: objects;
+}
+
+.link-roadmap .v-button {
+    width: auto;
+    background-color: #FAD20B;
+    height: 48px;
+    border-radius: 24px;
+    color: #191D28;
+    /* font-family: 'Poppins Bold'; */
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 21px;
+    text-align: center;
+    padding: 6px 32px;
+    text-transform: capitalize !important;
+    overflow: visible;
+}
+
+.link-roadmap .v-button:hover {
+    background-color: #fde152;
+}
+
+
+.path-learning .path-learning-content .path-learning-content-left {
+    display: flex;
+    position: absolute;
+    top: -100px;
+    left: -40px;
+}
+
+.path-learning-content-left .polygon-orange {
+    max-width: 100%;
+    height: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.path-learning-content-left .polygon-red {
+    margin-top: 180px;
+    vertical-align: middle;
+    border-style: none;
+    max-width: 100%;
+    height: auto;
+}
+
+.path-learning .path-learning-content .path-learning-content-right {
+    position: absolute;
+    background: url(../logo/learning-path-right.svg) no-repeat 100% 0;
+    background-size: contain;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 300px;
+    z-index: -1;
+}

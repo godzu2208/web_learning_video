@@ -37,6 +37,7 @@
 .list-flex .roadmap-items {
     padding: 15px;
     cursor: pointer;
+    /* flex: 0 0 25%; */
 }
 
 @media screen and (min-width: 1376px) {
