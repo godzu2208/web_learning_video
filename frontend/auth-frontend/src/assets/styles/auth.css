@@ -58,7 +58,7 @@
     margin-top: 0.25rem;
 }
 
-.btn {
+/* .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
@@ -69,7 +69,7 @@
     cursor: pointer;
     transition: background-color 0.2s;
     width: 100%;
-}
+} */
 
 .btn-primary {
     background-color: #4a90e2;
@@ -85,10 +85,6 @@
     cursor: not-allowed;
 }
 
-.auth-links {
-    margin-top: 1rem;
-    text-align: center;
-}
 
 .auth-links a {
     color: #4a90e2;
@@ -97,21 +93,4 @@
 
 .auth-links a:hover {
     text-decoration: underline;
-}
-
-/* Loading spinner */
-.spinner {
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: white;
-    animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
 }

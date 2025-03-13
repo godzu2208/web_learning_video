@@ -49,9 +49,10 @@ const Header = () => {
                             <a href="/login" className="v-login">
                                 Sign in
                             </a>
-                            <button type="button" className="v-register">
+                            <a href="/register"><button type="button" className="v-register">
                                 Register
-                            </button>
+                            </button></a>
+
                         </div>
                     </div>
                     {/*  */}
