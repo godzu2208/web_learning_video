@@ -1,0 +1,95 @@
+.main-courses-dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.courses-dashboard {
+  flex: auto;
+  min-height: 0;
+}
+
+.courses-dashboard .detail-banner {
+  height: 184px !important;
+  background-image: url(../bg/banner-course-detail.png);
+  width: 100%;
+  display: inline-block;
+  background-size: cover !important;
+  background-position: center !important;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.detail-banner .detail-banner-main {
+  border-bottom: 1px solid #2d4882;
+}
+
+.detail-banner-main .breadcrump {
+  padding: 0 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: flex;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  list-style: none;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  color: rgba(27, 27, 27, 0.45);
+  font-size: 16px;
+  padding: 12px 0px;
+}
+
+.detail-banner-main .breadcrump span {
+  display: flex;
+  color: #c4cfdd;
+  font-size: 16px;
+  /* padding: 0px 12px; */
+}
+
+.detail-banner-main .breadcrump .breadcrump-link a {
+  color: #c4cfdd !important;
+  font-size: 16px;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 1; */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 500px;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+.detail-banner-main .breadcrump .breadcrump-separator {
+  margin: 0px 8px;
+  color: #c4cfdd !important;
+  font-size: 16px;
+}
+
+.detail-banner .courses-mainboard {
+  max-width: 1300px;
+  margin: 0 auto !important;
+  /* padding: 0 15px; */
+  padding-top: 20px;
+}
+
+.courses-mainboard .courses-mainboard-content {
+  min-height: 200px;
+  margin-bottom: 32px;
+}
+
+.courses-mainboard-content .courses-mainboard-content-name {
+  /* font-family: "Poppins ExtraBold"; */
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  line-height: 72px;
+  white-space: pre-wrap;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.bg-white {
+  background-color: #fff !important;
+  padding-top: 40px;
+}

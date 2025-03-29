@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../assets/styles/auth.css';
 import axiosInstance from '../Register/axios';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify';
+
+const urlBackendrUsers = `${window.location.protocol}//${window.location.hostname}:5000/api/users`
+
+// const localIP = ip.address();
+// const urlBackendrUsers = `http://${localIP}:5000/api/users`
 
 const Login = () => {
     const navigate = useNavigate();
@@ -51,23 +59,16 @@ const Login = () => {
 
         try {
             setLoading(true);
-            // Gọi API login với đường dẫn đầy đủ
-            const response = await axiosInstance.post('http://localhost:5000/api/users/login', {
-                email: formData.email,
-                password: formData.password
-            });
-            alert("Đăng nhập thành công!!!")
-            console.log(formData.email)
-            console.log(formData.password)
-            console.log(response)
-            // Lưu token vào localStorage (nếu có)
-            // if (response.data.token) {
-            //     localStorage.setItem('token', response.data.token);
-            // }
-
-            console.log('Login data:', formData);
-            // Sau khi login thành công
-            navigate('/dashboard');
+            const response = await axiosInstance.post(`${urlBackendrUsers}/login`,
+                {
+                    email: formData.email,
+                    password: formData.password
+                    
+                }
+            );
+            console.log('Login response:', response.data); 
+            toast.success("Đăng nhập thành công !")
+            setTimeout(()=> navigate('/dashboard'), 3000);
         } catch (error) {
             setErrors({
                 submit: error.message || 'Đăng nhập thất bại'
@@ -78,67 +79,70 @@ const Login = () => {
     };
 
     return (
-        <div className="auth-container">
-            <div className="auth-form">
-                <div className="auth-header">
-                    <h2>Đăng nhập</h2>
-                </div>
-
-                {errors.submit && (
-                    <div className="error-message">{errors.submit}</div>
-                )}
-
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            className="form-control"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Nhập email của bạn"
-                        />
-                        {errors.email && (
-                            <div className="error-message">{errors.email}</div>
-                        )}
+        <>
+            <ToastContainer/>
+            <div className="auth-container">
+                <div className="auth-form">
+                    <div className="auth-header">
+                        <h2>Đăng nhập</h2>
                     </div>
 
-                    <div className="form-group">
-                        <label htmlFor="password">Mật khẩu</label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            className="form-control"
-                            value={formData.password}
-                            onChange={handleChange}
-                            placeholder="Nhập mật khẩu"
-                        />
-                        {errors.password && (
-                            <div className="error-message">{errors.password}</div>
-                        )}
+                    {errors.submit && (
+                        <div className="error-message">{errors.submit}</div>
+                    )}
+
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                className="form-control"
+                                value={formData.email}
+                                onChange={handleChange}
+                                placeholder="Nhập email của bạn"
+                            />
+                            {errors.email && (
+                                <div className="error-message">{errors.email}</div>
+                            )}
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="password">Mật khẩu</label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                className="form-control"
+                                value={formData.password}
+                                onChange={handleChange}
+                                placeholder="Nhập mật khẩu"
+                            />
+                            {errors.password && (
+                                <div className="error-message">{errors.password}</div>
+                            )}
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="btn btn-primary"
+                            disabled={loading}
+                        >
+                            {loading ? (
+                                <span className="spinner"></span>
+                            ) : (
+                                'Đăng nhập'
+                            )}
+                        </button>
+                    </form>
+
+                    <div className="auth-links">
+                        <Link to="/register">Chưa có tài khoản? Đăng ký</Link>
                     </div>
-
-                    <button
-                        type="submit"
-                        className="btn btn-primary"
-                        disabled={loading}
-                    >
-                        {loading ? (
-                            <span className="spinner"></span>
-                        ) : (
-                            'Đăng nhập'
-                        )}
-                    </button>
-                </form>
-
-                <div className="auth-links">
-                    <Link to="/register">Chưa có tài khoản? Đăng ký</Link>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

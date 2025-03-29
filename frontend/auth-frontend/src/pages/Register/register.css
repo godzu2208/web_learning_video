@@ -119,6 +119,9 @@
     opacity: 0.7;
 }
 
+.el-form-item-content .content-input .el-input[data-error="true"] {
+    border-color: #dc3545;
+}
 .el-form-item-content .content-input .el-input:hover {
     border-color: #c0c4cc;
 }
@@ -259,3 +262,23 @@
     text-align: center;
     margin-bottom: 20px;
 }
+/* CSS cho nút khi bị vô hiệu hóa */
+.btn-register:disabled {
+    opacity: 0.5; /* Làm nút mờ đi */
+    cursor: not-allowed; /* Thay đổi con trỏ chuột */
+}
+
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    position: absolute;
+    line-height: 1;
+}
+/* .content-input .el-input + .error-message{
+    border-color: #dc3545; 
+}
+.content-input .el-input + .error-message ~ .form-control {
+    border-color: #dc3545;
+} */

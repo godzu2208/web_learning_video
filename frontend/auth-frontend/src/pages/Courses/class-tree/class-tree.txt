@@ -1,0 +1,33 @@
+.course  section.detail-banner
+	 .bg-white	
+ 	 section.container-courses
+
+ 
+
+section.detail-banner 	.detail-banner_main 	.breadcrumb
+		      	.course_main		.course-main-content	p.course-main-content-name
+
+
+
+
+section.container-courses	.cross-bar
+				.cross-bar
+				.courses-layout-center	.ant-row	.left-col
+
+									.right-col
+
+
+.cross-bar	.cross-bar-row	.leftBar
+				.rightBar	ul.menu-tab	li.available	active 	> a.href="/availabe"
+								li.trending	active	> a.href="/trending"
+								li.contributing active	> a.href="/contributing"
+
+				
+
+.left-col	.certifates_tag		.search
+					.tags
+		.certifates_categories
+		.certifates_categories
+		.certifates_categories
+		
+
