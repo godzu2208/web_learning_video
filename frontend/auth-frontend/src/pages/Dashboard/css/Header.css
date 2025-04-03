@@ -99,6 +99,17 @@
   font-size: 14px;
   margin: 8px;
 }
+.v-searchBox input:hover {
+  border-color: #62cc9e;
+  border-right-width: 1px !important;
+}
+.v-searchBox input:focus {
+  border-color: #62cc9e;
+  border-right-width: 1px !important;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(62, 192, 141, 0.2);
+  box-shadow: 0 0 0 2px rgba(62, 192, 141, 0.2);
+}
 
 .v-searchBox .icon-search {
   position: absolute;
@@ -150,7 +161,6 @@
   color: #929083;
   cursor: pointer;
   background-color: #fadb3f;
-  /* color: #000; */
 }
 
 .search-input:placeholder-shown {

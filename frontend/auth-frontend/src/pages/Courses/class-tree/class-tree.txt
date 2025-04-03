@@ -22,12 +22,64 @@ section.container-courses	.cross-bar
 								li.trending	active	> a.href="/trending"
 								li.contributing active	> a.href="/contributing"
 
+.cross-bar	.cross-bar-row	.leftBar
+				.rightBar	.filter-header	.results-info		.certifate-pages	.results
+								.certifates-softBy	.select-box		.select-box-item	.item-control	span.item-children	
 				
 
-.left-col	.certifates_tag		.search
+.ant-left-col	.certifates_tag		.search
 					.tags
 		.certifates_categories
 		.certifates_categories
 		.certifates_categories
 		
 
+
+.courses-layout-center	.courses-ant-row	.ant-left-col	.certifates_tag		.search	span.ant-input	input				
+														span.icon-search
+											.tags	(span.ant-tag)*10
+								.certifates_categories	.title	p
+											.list	.ant-form-item	.ant-form-item-wrapper	.ant-form-control	span.ant-item-children	.ant-checkbox-group	(label.ant-checkbox-group-item	span.ant-checkbox)*12	
+								.certifates_categories
+								.certifates_categories
+
+		
+
+
+						.ant-right-col
+
+label.ant-checkbox-group-item	span.ant-checkbox	input.ant-checkbox-input
+				span.name-text
+
+
+
+<div className="list">
+                        <div className="ant-form-item">
+                          <div className="ant-form-item-wrapper">
+                            <div className="ant-item-control">
+                              <span className="ant-item-children">
+                                <span className="ant-checkbox-group">
+                                  {/* checkbox */}
+                                  <>
+                                    <label className="ant-checkbox-group-item">
+                                      <span className="ant-checkbox">
+                                        Linux
+                                      </span>
+                                    </label>
+                                    <label className="ant-checkbox-group-item">
+                                      <span className="ant-checkbox">
+                                        Networking
+                                      </span>
+                                    </label>
+                                    <label className="ant-checkbox-group-item">
+                                      <span className="ant-checkbox">
+                                        Cybersecurity
+                                      </span>
+                                    </label>
+                                                                      </>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>

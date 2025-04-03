@@ -9,6 +9,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const location = useLocation();
+
   return (
     <header className="layout-header">
       <div className="layout-header_content">
@@ -22,32 +23,6 @@ const Header = () => {
         <div className="menu-header">
           {/* Left */}
           <div className="v-menu">
-            {/* <ul classname="">
-              <li>
-                <a className="" href="/courses">
-                  {" "}
-                  Courses
-                </a>
-              </li>
-              <li>
-                <a className="" href="/roadmaps">
-                  {" "}
-                  Roadmaps
-                </a>
-              </li>
-              <li>
-                <a className="" href="/ranking">
-                  {" "}
-                  Rankings
-                </a>
-              </li>
-              <li>
-                <a className="" href="/faq">
-                  FAQ
-                </a>
-              </li>
-            </ul> */}
-
             <ul className="menu-header">
               <li
                 className={`header-item ${
@@ -90,7 +65,6 @@ const Header = () => {
                   className="search-input"
                 />
                 <span className="icon-search">
-                  {/* <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> */}
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </span>
               </span>
