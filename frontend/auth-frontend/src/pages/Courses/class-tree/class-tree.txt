@@ -29,6 +29,8 @@ section.container-courses	.cross-bar
 
 .ant-left-col	.certifates_tag		.search
 					.tags
+
+
 		.certifates_categories
 		.certifates_categories
 		.certifates_categories
@@ -51,6 +53,28 @@ section.container-courses	.cross-bar
 label.ant-checkbox-group-item	span.ant-checkbox	input.ant-checkbox-input
 				span.name-text
 
+
+.ant-checkbox-group .ant-checkbox-group-item .ant-checkbox-checked .ant-checkbox-inner {
+	background-color : #FFF;
+	border-color: #FAD20B;
+}
+
+.ant-checkbox-group-item:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner{
+	border-color: #3ec08d;
+} 
+
+position: absolute;
+    display: table;
+    border: 2px solid #fff;
+    border-top: 0;
+    border-left: 0;
+    -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
+    -ms-transform: rotate(45deg) scale(1) translate(-50%, -50%);
+    transform: rotate(45deg) scale(1) translate(-50%, -50%);
+    opacity: 1;
+    -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    content: ' ';
 
 
 <div className="list">
@@ -76,7 +100,7 @@ label.ant-checkbox-group-item	span.ant-checkbox	input.ant-checkbox-input
                                         Cybersecurity
                                       </span>
                                     </label>
-                                                                      </>
+                                                                    
                                 </span>
                               </span>
                             </div>

@@ -21,14 +21,9 @@ const Courses = () => {
 
   useEffect(() => {
     const type = searchParams.get("type") || "available";
-    const tag = searchParams.get("tag");
-    if (tag) {
-      setSelectedTag(tag);
-    }
-    if (!searchParams.get("tag")) {
-      setSelectedTag("");
-    }
+    const tag = searchParams.get("tag") || "";
     setActiveTab(type);
+    setSelectedTag(tag);
   }, [searchParams]);
 
   // Nội dung hiển thị dựa trên tab hiện tại
@@ -45,20 +40,44 @@ const Courses = () => {
     }
   };
 
+  const handleTabClick = (type) => {
+    setSearchParams({
+      type, // Đặt `type` trước
+      tag: searchParams.get("tag") || "", // Giữ nguyên `tag` nếu có
+    });
+  };
+
   // filter of tags
   const handleTagClick = (tag) => {
     setSelectedTag(tag);
     searchParams.set("tag", tag);
-    // window.history.pushState(
-    //   {},
-    //   "",
-    //   `${location.pathname}?${searchParams.toString()}`
-    // );
     setSearchParams({
+      type: searchParams.get("type") || "available",
       ...Object.fromEntries(searchParams.entries()),
       tag,
     });
   };
+
+  // categories
+
+  const categoriesTags = [
+    "Linux",
+    "Google Cloud Platform (GCP)",
+    "Security",
+    "Web Development",
+    "Mobile App",
+    "Machine Learning",
+    "Amazon Web Services (AWS)",
+    "Blockchain",
+    "Tools and Utilities",
+    "Database",
+    "DevOps",
+    "Programming Languages",
+    "Project Management",
+    "Computer Science",
+  ];
+
+  const levelTags = ["Beginner", "Intermediate", "Advanced"];
 
   return (
     <>
@@ -87,12 +106,7 @@ const Courses = () => {
                         className={`available ${
                           activeTab === "available" ? "active" : ""
                         }`}
-                        onClick={() =>
-                          setSearchParams({
-                            ...Object.fromEntries(searchParams.entries()),
-                            type: "available",
-                          })
-                        }
+                        onClick={() => handleTabClick("available")}
                       >
                         Available Courses
                       </li>
@@ -100,12 +114,7 @@ const Courses = () => {
                         className={`trending ${
                           activeTab === "trending" ? "active" : ""
                         }`}
-                        onClick={() =>
-                          setSearchParams({
-                            ...Object.fromEntries(searchParams.entries()),
-                            type: "trending",
-                          })
-                        }
+                        onClick={() => handleTabClick("trending")}
                       >
                         Trending Courses
                       </li>
@@ -113,12 +122,7 @@ const Courses = () => {
                         className={`contributing ${
                           activeTab === "contributing" ? "active" : ""
                         }`}
-                        onClick={() =>
-                          setSearchParams({
-                            ...Object.fromEntries(searchParams.entries()),
-                            type: "contributing",
-                          })
-                        }
+                        onClick={() => handleTabClick("contributing")}
                       >
                         Contributing Courses
                       </li>
@@ -256,18 +260,6 @@ const Courses = () => {
                           </span>
                         ))}
                       </div>
-                      {/* <div className="tags">
-                        <span className="ant-tag">Linux</span>
-                        <span className="ant-tag">CCNA</span>
-                        <span className="ant-tag">CCNP</span>
-                        <span className="ant-tag">Ruby</span>
-                        <span className="ant-tag">AWS</span>
-                        <span className="ant-tag">FE</span>
-                        <span className="ant-tag">BE</span>
-                        <span className="ant-tag">Kubernets</span>
-                        <span className="ant-tag">Sercurity</span>
-                        <span className="ant-tag">AI Agent</span>
-                      </div> */}
                     </div>
                     <div className="certifate-categories">
                       <div className="title">
@@ -278,56 +270,30 @@ const Courses = () => {
                           <div className="ant-form-item-wrapper">
                             <div className="ant-item-control">
                               <span className="ant-item-children">
-                                <span className="ant-checkbox-group">
+                                <div className="ant-checkbox-group">
                                   {/* checkbox */}
 
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">Linux</span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      Networking
-                                    </span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      Cybersecurity
-                                    </span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      Cloud Computing
-                                    </span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      AI & Machine Learning
-                                    </span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      Web Development
-                                    </span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      Mobile Development
-                                    </span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      Data Science
-                                    </span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">DevOps</span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      Database Management
-                                    </span>
-                                  </label>
-                                </span>
+                                  {categoriesTags.map((categoriesTag) => {
+                                    return (
+                                      <div>
+                                        <label
+                                          key={categoriesTag}
+                                          className="ant-checkbox-group-item"
+                                        >
+                                          <span className="ant-checkbox">
+                                            <input
+                                              type="checkbox"
+                                              className="ant-checkbox-input"
+                                              value={categoriesTag}
+                                            />
+                                            <span className="ant-checkbox-inner"></span>
+                                          </span>
+                                          <span>{categoriesTag}</span>
+                                        </label>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
                               </span>
                             </div>
                           </div>
@@ -345,21 +311,27 @@ const Courses = () => {
                               <span className="ant-item-children">
                                 <span className="ant-checkbox-group">
                                   {/* checkbox */}
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      Beginner
-                                    </span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      Intermediate
-                                    </span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      Advanced
-                                    </span>
-                                  </label>
+
+                                  {levelTags.map((levelTag) => {
+                                    return (
+                                      <div>
+                                        <label
+                                          key={levelTag}
+                                          className="ant-checkbox-group-item"
+                                        >
+                                          <span className="ant-checkbox">
+                                            <input
+                                              type="checkbox"
+                                              className="ant-checkbox-input"
+                                              value={levelTag}
+                                            />
+                                            <span className="ant-checkbox-inner"></span>
+                                          </span>
+                                          <span>{levelTag}</span>
+                                        </label>
+                                      </div>
+                                    );
+                                  })}
                                 </span>
                               </span>
                             </div>
@@ -379,12 +351,26 @@ const Courses = () => {
                                 <span className="ant-checkbox-group">
                                   {/* checkbox */}
                                   <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">Newest</span>
+                                    <span className="ant-checkbox">
+                                      <input
+                                        type="checkbox"
+                                        className="ant-checkbox-input"
+                                        value="Newest"
+                                      />
+                                      <span className="ant-checkbox-inner"></span>
+                                    </span>
+                                    <span>Newest</span>
                                   </label>
                                   <label className="ant-checkbox-group-item">
                                     <span className="ant-checkbox">
-                                      Most Popular
+                                      <input
+                                        type="checkbox"
+                                        className="ant-checkbox-input"
+                                        value="Most-Popular"
+                                      />
+                                      <span className="ant-checkbox-inner"></span>
                                     </span>
+                                    <span>Most Popular</span>
                                   </label>
                                 </span>
                               </span>
