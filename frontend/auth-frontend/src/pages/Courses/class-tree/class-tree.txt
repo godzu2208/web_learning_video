@@ -53,7 +53,10 @@ section.container-courses	.cross-bar
 label.ant-checkbox-group-item	span.ant-checkbox	input.ant-checkbox-input
 				span.name-text
 
-
+.ant-checkbox-group .ant-checkbox-group-item .ant-checkbox-checked .ant-checkbox-inner:after {
+    border-color: #FAD20B;
+    left: 35%;
+}
 .ant-checkbox-group .ant-checkbox-group-item .ant-checkbox-checked .ant-checkbox-inner {
 	background-color : #FFF;
 	border-color: #FAD20B;

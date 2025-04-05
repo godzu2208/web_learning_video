@@ -40,22 +40,33 @@ const Courses = () => {
     }
   };
 
-  const handleTabClick = (type) => {
-    setSearchParams({
-      type, // Đặt `type` trước
-      tag: searchParams.get("tag") || "", // Giữ nguyên `tag` nếu có
+  const updateSearchParams = (key, value) => {
+    const updatedParams = {
+      page: searchParams.get("page") || "1", // Giữ tham số `page`
+      level: searchParams.get("level") || "", // Giữ tham số `level`
+      categories: searchParams.get("categories") || "", // Giữ tham số `categories`
+      type: searchParams.get("type") || "available", // Giữ tham số `type`
+      tag: searchParams.get("tag") || "", // Giữ tham số `tag`
+      other: searchParams.get("other") || "", // Giữ tham số `other`
+      [key]: value, // Cập nhật tham số mới
+    };
+
+    Object.keys(updatedParams).forEach((param) => {
+      if (!updatedParams[param]) {
+        delete updatedParams[param];
+      }
     });
+
+    setSearchParams(updatedParams);
+  };
+
+  const handleTabClick = (type) => {
+    updateSearchParams("type", type);
   };
 
   // filter of tags
   const handleTagClick = (tag) => {
-    setSelectedTag(tag);
-    searchParams.set("tag", tag);
-    setSearchParams({
-      type: searchParams.get("type") || "available",
-      ...Object.fromEntries(searchParams.entries()),
-      tag,
-    });
+    updateSearchParams("tag", tag);
   };
 
   // categories
@@ -77,8 +88,50 @@ const Courses = () => {
     "Computer Science",
   ];
 
+  const handleCategoryClick = (category) => {
+    const currentCategories = searchParams.get("categories")?.split(",") || [];
+    let updatedCategories;
+
+    if (currentCategories.includes(category)) {
+      updatedCategories = currentCategories.filter((cat) => cat !== category);
+    } else {
+      updatedCategories = [...currentCategories, category];
+    }
+    updateSearchParams("categories", updatedCategories.join(","));
+  };
+
   const levelTags = ["Beginner", "Intermediate", "Advanced"];
 
+  const handleLevelClick = (level) => {
+    const currentLevels = searchParams.get("level")?.split(",") || [];
+    let updatedLevels;
+
+    if (currentLevels.includes(level)) {
+      // Nếu level đã tồn tại, loại bỏ nó
+      updatedLevels = currentLevels.filter((lvl) => lvl !== level);
+    } else {
+      // Nếu level chưa tồn tại, thêm nó
+      updatedLevels = [...currentLevels, level];
+    }
+
+    updateSearchParams("level", updatedLevels.join(","));
+  };
+
+  const otherTags = ["Newest", "Most Popular"];
+  const handleOtherClick = (other) => {
+    const currentOthers = searchParams.get("other")?.split(",") || [];
+    let updatedOthers;
+
+    if (currentOthers.includes(other)) {
+      // Nếu other đã tồn tại, loại bỏ nó
+      updatedOthers = currentOthers.filter((oth) => oth !== other);
+    } else {
+      // Nếu other chưa tồn tại, thêm nó
+      updatedOthers = [...currentOthers, other];
+    }
+
+    updateSearchParams("other", updatedOthers.join(","));
+  };
   return (
     <>
       <div className="main-courses-dashboard">
@@ -274,23 +327,31 @@ const Courses = () => {
                                   {/* checkbox */}
 
                                   {categoriesTags.map((categoriesTag) => {
+                                    const isChecked =
+                                      searchParams
+                                        .get("categories")
+                                        ?.split(",")
+                                        .includes(categoriesTag) || false;
+
                                     return (
-                                      <div>
-                                        <label
-                                          key={categoriesTag}
-                                          className="ant-checkbox-group-item"
-                                        >
-                                          <span className="ant-checkbox">
-                                            <input
-                                              type="checkbox"
-                                              className="ant-checkbox-input"
-                                              value={categoriesTag}
-                                            />
-                                            <span className="ant-checkbox-inner"></span>
-                                          </span>
-                                          <span>{categoriesTag}</span>
-                                        </label>
-                                      </div>
+                                      <label
+                                        key={categoriesTag}
+                                        className="ant-checkbox-group-item"
+                                      >
+                                        <span className="ant-checkbox">
+                                          <input
+                                            type="checkbox"
+                                            className="ant-checkbox-input"
+                                            value={categoriesTag}
+                                            checked={isChecked}
+                                            onChange={() =>
+                                              handleCategoryClick(categoriesTag)
+                                            }
+                                          />
+                                          <span className="ant-checkbox-inner"></span>
+                                        </span>
+                                        <span>{categoriesTag}</span>
+                                      </label>
                                     );
                                   })}
                                 </div>
@@ -309,30 +370,37 @@ const Courses = () => {
                           <div className="ant-form-item-wrapper">
                             <div className="ant-item-control">
                               <span className="ant-item-children">
-                                <span className="ant-checkbox-group">
+                                <div className="ant-checkbox-group">
                                   {/* checkbox */}
 
                                   {levelTags.map((levelTag) => {
+                                    const isChecked =
+                                      searchParams
+                                        .get("level")
+                                        ?.split(",")
+                                        .includes(levelTag) || false;
                                     return (
-                                      <div>
-                                        <label
-                                          key={levelTag}
-                                          className="ant-checkbox-group-item"
-                                        >
-                                          <span className="ant-checkbox">
-                                            <input
-                                              type="checkbox"
-                                              className="ant-checkbox-input"
-                                              value={levelTag}
-                                            />
-                                            <span className="ant-checkbox-inner"></span>
-                                          </span>
-                                          <span>{levelTag}</span>
-                                        </label>
-                                      </div>
+                                      <label
+                                        key={levelTag}
+                                        className="ant-checkbox-group-item"
+                                      >
+                                        <span className="ant-checkbox">
+                                          <input
+                                            type="checkbox"
+                                            className="ant-checkbox-input"
+                                            value={levelTag}
+                                            checked={isChecked}
+                                            onChange={() =>
+                                              handleLevelClick(levelTag)
+                                            }
+                                          />
+                                          <span className="ant-checkbox-inner"></span>
+                                        </span>
+                                        <span>{levelTag}</span>
+                                      </label>
                                     );
                                   })}
-                                </span>
+                                </div>
                               </span>
                             </div>
                           </div>
@@ -348,31 +416,37 @@ const Courses = () => {
                           <div className="ant-form-item-wrapper">
                             <div className="ant-item-control">
                               <span className="ant-item-children">
-                                <span className="ant-checkbox-group">
+                                <div className="ant-checkbox-group">
                                   {/* checkbox */}
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      <input
-                                        type="checkbox"
-                                        className="ant-checkbox-input"
-                                        value="Newest"
-                                      />
-                                      <span className="ant-checkbox-inner"></span>
-                                    </span>
-                                    <span>Newest</span>
-                                  </label>
-                                  <label className="ant-checkbox-group-item">
-                                    <span className="ant-checkbox">
-                                      <input
-                                        type="checkbox"
-                                        className="ant-checkbox-input"
-                                        value="Most-Popular"
-                                      />
-                                      <span className="ant-checkbox-inner"></span>
-                                    </span>
-                                    <span>Most Popular</span>
-                                  </label>
-                                </span>
+                                  {otherTags.map((otherTag) => {
+                                    const isChecked =
+                                      searchParams
+                                        .get("other")
+                                        ?.split(",")
+                                        .includes(otherTag) || false;
+
+                                    return (
+                                      <label
+                                        key={otherTag}
+                                        className="ant-checkbox-group-item"
+                                      >
+                                        <span className="ant-checkbox">
+                                          <input
+                                            type="checkbox"
+                                            className="ant-checkbox-input"
+                                            value={otherTag}
+                                            checked={isChecked}
+                                            onChange={() =>
+                                              handleOtherClick(otherTag)
+                                            }
+                                          />
+                                          <span className="ant-checkbox-inner"></span>
+                                        </span>
+                                        <span>{otherTag}</span>
+                                      </label>
+                                    );
+                                  })}
+                                </div>
                               </span>
                             </div>
                           </div>
