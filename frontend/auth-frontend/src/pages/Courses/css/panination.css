@@ -1,0 +1,50 @@
+.paninate-pure {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.panination-main {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
+}
+
+.pagination-button {
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  background-color: #fff;
+  color: #6c757d;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 40px;
+  font-weight: bold;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  color: #191d28 !important;
+}
+
+.pagination-button.active {
+  background-color: #ffe772 !important;
+  /* border-color: #007bff; */
+  color: #fff;
+  color: #191d28 !important;
+}
+
+.pagination-button:disabled {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.pagination-dots {
+  padding: 8px 12px;
+  color: #6c757d;
+}
+

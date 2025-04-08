@@ -704,3 +704,66 @@
 .ant-checkbox-input:checked + .ant-checkbox-inner::after {
   display: block;
 }
+
+.courses-ant-row .ant-right-col {
+  padding: 0px 20px 0px 32px;
+  display: block;
+  width: 66.6666666667%;
+  -webkit-box-flex: 0;
+  position: relative;
+  min-height: 1px;
+  float: left;
+}
+
+.ant-right-col .ant-right-col-container {
+  padding-right: 0px;
+  margin-bottom: 40px;
+}
+
+.ant-right-col-container .panination-top {
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.ant-right-col-container .panination-bottom {
+  margin: 32px 0px !important;
+  justify-content: center;
+  -webkit-box-pack: center;
+  display: flex;
+}
+
+.ant-right-col-container .certifates-item {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #dee5ef;
+  background: #ffffff;
+  border-radius: 6px;
+  width: 100%;
+  height: 170px !important;
+  display: flex;
+  margin-top: 40px;
+}
+.ant-right-col-container .certifates-item img {
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%;
+}
+
+.certifates-item .body-course {
+  padding-left: 24px;
+  padding-bottom: 16px;
+  -webkit-box-pack: justify !important;
+  justify-content: space-between !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  flex-direction: column !important;
+  display: flex !important;
+}
+
+.body-course .title {
+  min-height: 91px;
+  width: 90%;
+}

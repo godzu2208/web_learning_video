@@ -50,6 +50,22 @@ section.container-courses	.cross-bar
 
 						.ant-right-col
 
+
+
+.ant-right-col	.ant-right-col-container	.panination-top
+						.certificates-item * 15
+						.panination-bottom
+
+.panination-top	.paninate-pure	ul.panination-main	li*8	
+
+
+li	.a
+
+
+
+
+
+
 label.ant-checkbox-group-item	span.ant-checkbox	input.ant-checkbox-input
 				span.name-text
 
@@ -78,6 +94,26 @@ position: absolute;
     -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
     transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
     content: ' ';
+
+
+
+	left: 35%;
+  position: absolute;
+  display: table;
+  transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  opacity: 1;
+  content: " ";
+  border-width: 0px 2px 2px 0px;
+  border-style: solid solid;
+  /* border-color: rgb(255, 255, 255) rgb(255, 255, 255); */
+  border-image: initial;
+  border-top: 0px;
+  border-left: 0px;
+  transition: 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+
+
+
+
 
 
 <div className="list">

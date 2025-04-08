@@ -9,7 +9,8 @@ import arr from "./logo/arrow-left.svg";
 // import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-// import { useLocation } from "react-router-dom";
+import Pagination from "./Panination";
+import logoDB from "./logo/database.png";
 
 const Courses = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -26,7 +27,6 @@ const Courses = () => {
     setSelectedTag(tag);
   }, [searchParams]);
 
-  // Nội dung hiển thị dựa trên tab hiện tại
   const renderContent = () => {
     switch (activeTab) {
       case "available":
@@ -42,13 +42,13 @@ const Courses = () => {
 
   const updateSearchParams = (key, value) => {
     const updatedParams = {
-      page: searchParams.get("page") || "1", // Giữ tham số `page`
-      level: searchParams.get("level") || "", // Giữ tham số `level`
-      categories: searchParams.get("categories") || "", // Giữ tham số `categories`
-      type: searchParams.get("type") || "available", // Giữ tham số `type`
-      tag: searchParams.get("tag") || "", // Giữ tham số `tag`
-      other: searchParams.get("other") || "", // Giữ tham số `other`
-      [key]: value, // Cập nhật tham số mới
+      page: searchParams.get("page") || "1",
+      level: searchParams.get("level") || "",
+      categories: searchParams.get("categories") || "",
+      type: searchParams.get("type") || "available",
+      tag: searchParams.get("tag") || "",
+      other: searchParams.get("other") || "",
+      [key]: value,
     };
 
     Object.keys(updatedParams).forEach((param) => {
@@ -66,7 +66,13 @@ const Courses = () => {
 
   // filter of tags
   const handleTagClick = (tag) => {
-    updateSearchParams("tag", tag);
+    // Nếu tag đã được chọn (đang có trong URL), xóa nó đi
+    if (searchParams.get("tag") === tag) {
+      updateSearchParams("tag", "");
+    } else {
+      // Nếu tag chưa được chọn, thêm nó vào
+      updateSearchParams("tag", tag);
+    }
   };
 
   // categories
@@ -455,7 +461,39 @@ const Courses = () => {
                     </div>
                   </div>
                   {/* RIGHT */}
-                  <div className="ant-right-col">{renderContent}</div>
+                  <div className="ant-right-col">
+                    {renderContent}
+                    <div className="ant-right-col-container">
+                      <div className="panination-top">
+                        <Pagination totalItems={28} itemsPerPage={10} />
+                      </div>
+                      <div className="certifates-item">
+                        <img
+                          src={logoDB}
+                          className="img-cover"
+                          alt="image-cover"
+                        />
+                        <div className="body-course">
+                          <div className="title">
+                            <div className="title-level">
+                              <div className="title-level-info">
+                                <span className="level-text">Beginner</span>
+                              </div>
+                            </div>
+                            <div className="title-description">
+                              <a href="path to backend to get data from sql">
+                                Database Management System
+                              </a>
+                            </div>
+                          </div>
+                          <div className="info"></div>
+                        </div>
+                      </div>
+                      <div className="panination-bottom">
+                        <Pagination totalItems={28} itemsPerPage={10} />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
