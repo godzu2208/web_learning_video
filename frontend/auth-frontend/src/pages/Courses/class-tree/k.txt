@@ -1,0 +1,16 @@
+<FontAwesomeIcon icon="fa-regular fa-circle-question" />
+
+<FontAwesomeIcon icon="fa-solid fa-book" />
+
+<FontAwesomeIcon icon="fa-regular fa-eye" />
+
+<FontAwesomeIcon icon="fa-regular fa-calendar" />
+
+
+
+div	.md	.text-sm	img
+				span
+
+
+div	.md	.text-sm	icon
+				span				

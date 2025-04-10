@@ -6,11 +6,14 @@ import Footer from "../Dashboard/Footer";
 import "./css/course.css";
 import Breadcrumb from "./Breadcrump";
 import arr from "./logo/arrow-left.svg";
+
 // import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Pagination from "./Panination";
-import logoDB from "./logo/database.png";
+
+import ITCourses from "./certifatesList";
+import { itFields } from "./certifatesList"; // Import itFields
 
 const Courses = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -19,6 +22,10 @@ const Courses = () => {
   const [selectedValueMenu, setSelectedValueMenu] = useState("New releases");
   const [selectedTag, setSelectedTag] = useState(searchParams.get("tag") || "");
   // const location = useLocation();
+  const currentPage = parseInt(searchParams.get("page") || "1", 10);
+  const itemsPerPage = 10;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
   useEffect(() => {
     const type = searchParams.get("type") || "available";
@@ -198,8 +205,16 @@ const Courses = () => {
                       <div className="results-info">
                         <div className="certifate-page">
                           <div className="results flex-1">
-                            Showing <span class="bold text-black">1-15</span> of{" "}
-                            <span class="bold text-black">59</span> results
+                            Showing{" "}
+                            <span className="bold text-black">
+                              {indexOfFirstItem + 1}-
+                              {Math.min(indexOfLastItem, itFields.length)}
+                            </span>{" "}
+                            of{" "}
+                            <span className="bold text-black">
+                              {itFields.length}
+                            </span>{" "}
+                            results
                           </div>
                         </div>
                       </div>
@@ -465,32 +480,18 @@ const Courses = () => {
                     {renderContent}
                     <div className="ant-right-col-container">
                       <div className="panination-top">
-                        <Pagination totalItems={28} itemsPerPage={10} />
-                      </div>
-                      <div className="certifates-item">
-                        <img
-                          src={logoDB}
-                          className="img-cover"
-                          alt="image-cover"
+                        <Pagination
+                          totalItems={itFields.length}
+                          itemsPerPage={10}
                         />
-                        <div className="body-course">
-                          <div className="title">
-                            <div className="title-level">
-                              <div className="title-level-info">
-                                <span className="level-text">Beginner</span>
-                              </div>
-                            </div>
-                            <div className="title-description">
-                              <a href="path to backend to get data from sql">
-                                Database Management System
-                              </a>
-                            </div>
-                          </div>
-                          <div className="info"></div>
-                        </div>
                       </div>
+                      <ITCourses />
+
                       <div className="panination-bottom">
-                        <Pagination totalItems={28} itemsPerPage={10} />
+                        <Pagination
+                          totalItems={itFields.length}
+                          itemsPerPage={10}
+                        />
                       </div>
                     </div>
                   </div>
