@@ -1,0 +1,5 @@
+.ant-row	.ant-col	section.course-detail-banner			<Breadcrumb/>
+										.detail-banner-description	.des-container	.des-content	
+														.text-note
+														.courses-info
+				section.course-detail-main			

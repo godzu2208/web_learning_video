@@ -1,0 +1,41 @@
+.main-courses-detail {
+  -ms-flex: auto;
+  flex: auto;
+  min-height: 0;
+}
+
+.main-courses-detail .courses-detail-row {
+  position: relative;
+  margin: 0px;
+  height: auto;
+  zoom: 1;
+  display: block;
+}
+.courses-detail-row .courses-detail-col {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding-right: 0;
+  padding-left: 0;
+  min-height: 1px;
+}
+
+.courses-detail-col .courses-detail-banner {
+  background: url(../bg/banner-course-detail.png);
+  min-height: 350px;
+  width: 100%;
+  display: inline-block;
+  background-size: cover !important;
+  background-position: center !important;
+  padding-bottom: 20px;
+  position: relative !important;
+}
+
+.courses-detail-banner .detail-banner-main {
+  border-bottom: 1px solid #2d4882;
+  margin: 0px 12px;
+}
+
+.courses-detail-banner .detail-banner-description {
+  /* 29/04/2025 tới đây */
+}

@@ -8,7 +8,8 @@ const Breadcrumb = () => {
   // Phân tích đường dẫn URL
   const pathnames = location.pathname.split("/").filter((x) => x);
   const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    // return string.charAt(0).toUpperCase() + string.slice(1);
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
   };
   return (
     <div className="detail-banner-main">
@@ -27,9 +28,9 @@ const Breadcrumb = () => {
                 <span className="breadcrump-separator">&gt;</span>
                 <span className="breadcrump-link">
                   {isLast ? (
-                    <span>{capitalizeFirstLetter(value)}</span> // Không tạo link cho phần tử cuối
+                    <span>{capitalizeFirstLetter(value)}</span>
                   ) : (
-                    <Link to={to}>{value}</Link>
+                    <Link to={to}>{capitalizeFirstLetter(value)}</Link>
                   )}
                 </span>
               </React.Fragment>

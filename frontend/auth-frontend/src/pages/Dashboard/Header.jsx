@@ -26,7 +26,7 @@ const Header = () => {
             <ul className="menu-header">
               <li
                 className={`header-item ${
-                  location.pathname === "/courses" ? "active" : ""
+                  location.pathname.startsWith("/courses") ? "active" : ""
                 }`}
               >
                 <Link to="/courses">Courses</Link>
