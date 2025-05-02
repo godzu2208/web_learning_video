@@ -10,6 +10,7 @@ import {
   faCircleQuestion,
 } from "@fortawesome/free-regular-svg-icons";
 import { faPenToSquare, faEye } from "@fortawesome/free-solid-svg-icons";
+import logos from "./importLogo.js";
 
 export const itFields = [
   {
